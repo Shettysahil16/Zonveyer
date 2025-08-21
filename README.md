@@ -4,6 +4,54 @@ Zonveyer is a **responsive real-time chat application** built with the **MERN st
 
 ---
 
+## 🖼️ Screenshots
+
+### 📱 Authentication Flow
+
+#### 🔐 Login Page
+![Login Page](./screenshots/1-login-page.png)
+
+#### 📝 Signup Page
+![Signup Page](./screenshots/2-signup-page.png)
+
+---
+
+### 🧭 Main Application
+
+#### 🏠 Home Page (Desktop)
+![Home Page](./screenshots/3-home-page.png)
+
+#### 👤 Users Loading State
+![Users Loading](./screenshots/4-users-loading.png)
+
+#### 💬 Chats Loading State
+![Chats Loading](./screenshots/5-chats-loading.png)
+
+#### 💭 Message Page
+![Message Page](./screenshots/6-message-page.png)
+
+#### 🔓 Logout Confirmation
+![Logout Confirmation](./screenshots/7-logout-confirmation.png)
+
+---
+
+### 📱 Mobile View
+
+#### 📲 Mobile Login Page
+![Mobile Login](./screenshots/8-mobile-login.png)
+
+#### 🧾 Mobile Signup Page
+![Mobile Signup](./screenshots/9-mobile-signup.png)
+
+#### 🏠 Mobile Home Page
+![Mobile Home](./screenshots/10-mobile-home.png)
+
+#### 💬 Mobile Chat Page
+![Mobile Chat](./screenshots/11-mobile-chat.png)
+
+---
+
+
 ## 📁 Project Structure
 
 ```plaintext
