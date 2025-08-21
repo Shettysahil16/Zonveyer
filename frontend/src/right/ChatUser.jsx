@@ -35,7 +35,6 @@ function ChatUser() {
                             }
                         </div>
                     </div>
-                    <Link to={"/signup"}>ChatUser</Link>
                 </div>
             </div>
         </>

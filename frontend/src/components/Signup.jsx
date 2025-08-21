@@ -68,7 +68,7 @@ function Signup() {
         <>
             <div className='h-screen flex justify-center items-center'>
                 {loading && <Spinner/>}
-                <div className='bg-white text-black container mx-auto max-w-xl max-h-[70%] shadow-md p-4'>
+                <div className='bg-white text-black container mx-auto max-w-xl max-h-[80%] shadow-md p-4'>
                     <p className='text-center text-3xl font-semibold mb-4'>Signup</p>
                     <form className='flex flex-col gap-4'>
                         <div>

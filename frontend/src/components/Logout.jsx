@@ -42,7 +42,7 @@ function Logout({ onClose }) {
     }
 
     return (
-        <div className='h-full w-full fixed inset-0 z-10 flex justify-center items-center'>
+        <div className='bg-slate-400/30 h-full w-full fixed inset-0 z-10 flex justify-center items-center'>
             {loading && <Spinner/>}
             <div className='bg-white w-3xl mx-auto h-[20%] text-black relative shadow-md rounded-xs text-3xl'>
                 <div className='h-full'>

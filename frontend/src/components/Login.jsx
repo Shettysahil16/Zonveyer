@@ -59,7 +59,7 @@ function Login() {
         <>
             <div className='h-screen flex justify-center items-center'>
                 {loading && <Spinner/>}
-                <div className='bg-white text-black container mx-auto max-w-xl max-h-[70%] shadow-md p-4'>
+                <div className='bg-white text-black container mx-auto max-w-lg max-h-[70%] shadow-md p-4'>
                     <p className='text-center text-3xl font-semibold mb-4'>Login</p>
                     <div className='flex flex-col gap-4'>
                         <div>
