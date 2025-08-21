@@ -16,7 +16,7 @@ function Logout({ onClose }) {
         e.preventDefault();
         try {
             setLoading(true);
-            const fetchData = await fetch('http://localhost:5002/api/user-logout', {
+            const fetchData = await fetch(`${import.meta.env.VITE_BACKEND_URI}api/user-logout`, {
                 method: 'get',
                 credentials: 'include',
             })

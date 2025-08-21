@@ -35,7 +35,7 @@ function Signup() {
             setLoading(true);
             try {
                 setLoading(true);
-                const dataResponse = await fetch('http://localhost:5002/api/signup', {
+                const dataResponse = await fetch(`${import.meta.env.VITE_BACKEND_URI}api/signup`, {
                     method: "post",
                     credentials: 'include',
                     headers: {

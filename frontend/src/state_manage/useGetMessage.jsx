@@ -10,7 +10,7 @@ function useGetMessage() {
             setLoading(true);
             if (selectedConversation && selectedConversation._id) {
                 try {
-                    const dataResponse = await fetch(`http://localhost:5002/api/message/get-message/${selectedConversation?._id}`, {
+                    const dataResponse = await fetch(`${import.meta.env.VITE_BACKEND_URI}api/message/get-message/${selectedConversation?._id}`, {
                         method: "get",
                         credentials: 'include',
                         headers: {

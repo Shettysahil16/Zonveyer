@@ -8,7 +8,7 @@ function useSendMessage() {
 
         const sendMessage = async(message) => {
             try {
-                const dataResponse = await fetch(`http://localhost:5002/api/message/send-message/${selectedConversation?._id}`,{
+                const dataResponse = await fetch(`${import.meta.env.VITE_BACKEND_URI}api/message/send-message/${selectedConversation?._id}`,{
                     method: "post",
                         credentials: 'include',
                         headers: {

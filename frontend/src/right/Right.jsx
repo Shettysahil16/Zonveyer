@@ -8,7 +8,7 @@ import { BsWhatsapp } from "react-icons/bs";
 
 function Right() {
   const { selectedConversation } = useConversation();
-  console.log("selectedConversation", selectedConversation);
+  //console.log("selectedConversation", selectedConversation);
   //const {authUser} = useAuth();
   //console.log(JSON.parse(localStorage.getItem("messenger")));
 
