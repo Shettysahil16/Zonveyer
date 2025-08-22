@@ -9,45 +9,42 @@ Zonveyer is a **responsive real-time chat application** built with the **MERN st
 ### 📱 Authentication Flow
 
 #### 🔐 Login Page
-![Login Page](./screenshots/1-login-page.png)
+![Login Page](./sample/1-login-page.png)
 
 #### 📝 Signup Page
-![Signup Page](./screenshots/2-signup-page.png)
+![Signup Page](./sample/2-signup-page.png)
 
 ---
 
 ### 🧭 Main Application
 
 #### 🏠 Home Page (Desktop)
-![Home Page](./screenshots/3-home-page.png)
+![Home Page](./sample/3-homepage.png)
 
-#### 👤 Users Loading State
-![Users Loading](./screenshots/4-users-loading.png)
+#### 👤 Users, Chats Loading State and Notification Bar
+![Users Loading](./sample/4-users-loading-chats-loading.png)
 
-#### 💬 Chats Loading State
-![Chats Loading](./screenshots/5-chats-loading.png)
-
-#### 💭 Message Page
-![Message Page](./screenshots/6-message-page.png)
+#### 💭 Message Notification
+![Message Notification](./sample/5-message-notification.png)
 
 #### 🔓 Logout Confirmation
-![Logout Confirmation](./screenshots/7-logout-confirmation.png)
+![Logout Confirmation](./sample/7-logout-confirmation.png)
 
 ---
 
 ### 📱 Mobile View
 
 #### 📲 Mobile Login Page
-![Mobile Login](./screenshots/8-mobile-login.png)
+![Mobile Login](./sample/8-mobile-login.png)
 
 #### 🧾 Mobile Signup Page
-![Mobile Signup](./screenshots/9-mobile-signup.png)
+![Mobile Signup](./sample/9-mobile-signup.png)
 
 #### 🏠 Mobile Home Page
-![Mobile Home](./screenshots/10-mobile-home.png)
+![Mobile Home](./sample/10-mobile-home.png)
 
 #### 💬 Mobile Chat Page
-![Mobile Chat](./screenshots/11-mobile-chat.png)
+![Mobile Chat](./sample/11-mobile-chat.png)
 
 ---
 
