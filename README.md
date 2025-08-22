@@ -106,7 +106,7 @@ _coming soon..._
 
 ```bash
 git clone https://github.com/Shettysahil16/zonveyer.git
-cd zonveyer
+cd Zonveyer
 ```
 
 ### 2. Setup backend
