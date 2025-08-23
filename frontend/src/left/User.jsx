@@ -4,10 +4,12 @@ import { useEffect } from 'react';
 import { toast } from 'react-toastify';
 //import useConversation from '../state_manage/useConversation';
 import circleLoading from '../assets/Processing Circle.gif';
+import { useUserSearch } from '../context/UserSearchContext';
 
 function User() {
   const [loading, setLoading] = useState(false);
   const [allUsersData, setAllUsersData] = useState([]);
+  const { searchedUserDetails, hasValue } = useUserSearch();
   //const {selectedConversation} = useConversation();
 
   useEffect(() => {
@@ -52,13 +54,13 @@ function User() {
       }
 
       {
-        !loading && allUsersData === null && (
+        !loading && allUsersData  === null && !hasValue && (
           <p>No users</p>
         )
       }
 
       {
-        !loading && allUsersData !== 0 && (
+        !loading && allUsersData !== 0 && !hasValue && (
           allUsersData.map((users, index) => {
           return (
             <div key={index}>
@@ -66,6 +68,17 @@ function User() {
             </div>
           )
         })
+        )
+      }
+      {
+        !loading && hasValue && (
+          searchedUserDetails.map((users, index) => {
+            return(
+              <div key={index}>
+              <Users allUsersData={users} loading={loading} />
+            </div>
+            )
+          })
         )
       }
 
