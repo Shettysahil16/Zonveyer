@@ -2,7 +2,7 @@ import express from 'express';
 const router = express.Router();
 import { getAllUsers, login, logout, searchUsers, signUp } from '../controller/user.controller.js';
 import { authToken } from '../middleware/authToken.js';
-import { getMessage, sendMessage } from '../controller/message.controller.js';
+import { getConversations, getMessage, sendMessage } from '../controller/message.controller.js';
 
 //User Routes
 router.post("/signup", signUp);
@@ -14,5 +14,6 @@ router.post("/search-users", authToken, searchUsers);
 //Message Routes
 router.post("/message/send-message/:id", authToken, sendMessage);
 router.get("/message/get-message/:id", authToken, getMessage);
+router.get("/message/get-conversations", authToken, getConversations);
 
 export default router;

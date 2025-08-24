@@ -7,8 +7,9 @@ import { FaArrowLeft } from "react-icons/fa6";
 function ChatUser() {
     const { selectedConversation , setSelectedConversation  } = useConversation();
     //console.log(selectedConversation);
-    const { onlineUsers } = useSocketContext();
+    const { onlineUsers, typingUser } = useSocketContext();
     const isOnline = onlineUsers.includes(selectedConversation._id);
+    const isTyping = typingUser === selectedConversation._id;
     //console.log("isOnline", isOnline);
     
 
@@ -28,11 +29,11 @@ function ChatUser() {
                         </div>
                         <div>
                             <p className='font-bold text-sm'>{selectedConversation?.username}</p>
-                            {
-                                isOnline && (
-                                    <p className='text-xs'>Online</p>
-                                )
-                            }
+                            {isTyping ? (
+                                <p className='text-xs font-medium text-green-400'>typing...</p>
+                            ) : isOnline && (
+                                <p className='text-xs'>Online</p>
+                            )}
                         </div>
                     </div>
                 </div>

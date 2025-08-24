@@ -1,18 +1,35 @@
 import React from 'react'
 //import useConversation from '../state_manage/useConversation';
 
-function Chats({message}) {
+function Chats({ message }) {
     //const { selectedConversation } = useConversation();
     //console.log(message);
+    const createdAt = new Date(message?.createdAt);
+    const messageTime = createdAt.toLocaleTimeString("en-US", { hour: "2-digit", minute: "2-digit", hour12: true });
+    //console.log("time", messageTime);
+
+
     const senderUserInfo = JSON.parse(localStorage.getItem("messenger"));
     const senderUserId = senderUserInfo?._id
     const isUserSender = senderUserId === message?.senderId;
 
     return (
         <>
-            <div className='p-2'>
+            <div className='py-2 px-1'>
                 <div className={`chat ${isUserSender ? "chat-end" : "chat-start"}`} >
-                    <div className={`chat-bubble ${isUserSender ? "chat-bubble-accent" : "chat-bubble-info"}`}>{message?.message}</div>
+                    <div
+                        className={`chat-bubble relative max-w-[80%] ${isUserSender ? "chat-bubble-accent" : "chat-bubble-info"}`}
+                    >
+                        {/* Message text */}
+                        <div className="break-words whitespace-pre-wrap text-sm pr-12">
+                            {message?.message}
+                        </div>
+
+                        {/* Time in bottom-right */}
+                        <div className="absolute bottom-1 right-2 text-[10px] text-gray-600">
+                            {messageTime}
+                        </div>
+                    </div>
                 </div >
             </div>
         </>
@@ -20,35 +37,3 @@ function Chats({message}) {
 }
 
 export default Chats
-
-
-
-{/* <div className="chat chat-start">
-                    <div className="chat-bubble chat-bubble-accent">
-                        That's never been done in the history of the Jedi.
-                    </div>
-                </div> */}
-
-
-//                 import React, { useEffect } from 'react'
-// import { useSocketContext } from './SocketContext'
-// import useConversation from '../state_manage/useConversation';
-// import sound from '../assets/notification tone.mp3'
-
-// function UseGetSocketMessage() {
-//     const { socket } = useSocketContext();
-//     const { messages, setMessages } = useConversation();
-
-//     useEffect(() => {
-//         socket.on("new-message", (newMessages) => {
-//             console.log("newMessages", newMessages);
-//             const notificationSound = new Audio(sound);
-//             notificationSound.play();
-//             setMessages([...messages, newMessages])
-//         });
-//         return () => socket.off("new-message");
-//     }, [socket, messages, setMessages])
-// }
-
-// export default UseGetSocketMessage
-// //setMessages([Array.isArray(messages), newMessages])
