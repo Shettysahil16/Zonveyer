@@ -3,7 +3,7 @@ import useConversation from './useConversation'
 
 function useGetMessage() {
     const [loading, setLoading] = useState(false);
-    const { selectedConversation, messages, setMessages } = useConversation();
+    const { selectedConversation, messages, setMessages, setConversations } = useConversation();
 
     useEffect(() => {
         const fetchUserMessages = async () => {
@@ -26,6 +26,9 @@ function useGetMessage() {
                     setLoading(false);
                     if (userMessage.success) {
                         setMessages(userMessage.data || []);
+                        //console.log("messages", messages);
+                        
+                        //setConversations(userMessage.data);
                     }
                     else {
                         setMessages([]); // fallback if not successful
