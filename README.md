@@ -92,13 +92,6 @@ linkon/
 
 ---
 
-## 📷 Screenshots
-
-<!-- Add screenshots here if available -->
-_coming soon..._
-
----
-
 
 ## 📦 Installation & Setup
 
