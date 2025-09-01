@@ -11,7 +11,7 @@ export const sendMessage = async (req, res) => {
     const { id: receiverId } = req.params;
     const senderId = req.userId;
     //console.log("senderId",senderId);
-    let senderUser = await User.findById(senderId)
+    let senderUser = await User.findById(senderId);
     let conversation = await conversationModel.findOne({
       participants: { $all: [senderId, receiverId] },
     });
@@ -34,12 +34,23 @@ export const sendMessage = async (req, res) => {
     }
 
     const receiverSocketId = getReceiverSocketId(receiverId);
+    const senderSocketId = getReceiverSocketId(senderId);
     if (receiverSocketId) {
       io.to(receiverSocketId).emit("new-message", {
         ...newMessage.toObject(),
-        conversationParticipants : conversation.participants,
-        senderName : senderUser.username,
-        lastMessage : conversation.lastMessage,
+        conversationParticipants: conversation.participants,
+        senderName: senderUser.username,
+        lastMessage: conversation.lastMessage,
+      });
+    }
+
+    if (senderSocketId) {
+      io.to(senderSocketId).emit("new-message", {
+        ...newMessage.toObject(),
+        conversationParticipants: conversation.participants,
+        senderName: senderUser.username,
+        lastMessage: conversation.lastMessage,
+        self: true, // 👈 flag so frontend knows it's sender
       });
     }
 
@@ -93,7 +104,6 @@ export const getMessage = async (req, res) => {
     });
   }
 };
-
 
 export const getConversations = async (req, res) => {
   try {

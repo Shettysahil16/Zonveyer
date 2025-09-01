@@ -15,16 +15,22 @@ function UseGetSocketMessage() {
     sortedUsersData,
     setSortedUsersData,
   } = useConversation();
+  const receiver = selectedConversation?._id;
+  const sender = JSON.parse(localStorage.getItem("messenger"))._id;
+  console.log("receiver in socket", receiver);
+  console.log("sender in socket", sender);
 
   useEffect(() => {
     const handleNewMessage = (newMessage) => {
       console.log("newMessage", newMessage);
 
-      const sender = sortedUsersData.find((v) => v._id === newMessage.senderId);
+      //const sender = sortedUsersData.find((v) => v._id === newMessage.senderId);
       //console.log("sender", sender);
       const senderIndex = sortedUsersData.findIndex(
         (v) => v._id === newMessage.senderId
       );
+
+      if (senderIndex === -1) return sortedUsersData;
 
       const updatedSender = {
         ...sortedUsersData[senderIndex], // Copy the current sender's data
@@ -47,6 +53,13 @@ function UseGetSocketMessage() {
         selectedConversation &&
         newMessage.conversationParticipants.includes(selectedConversation._id);
       console.log("conversations in socket", conversations);
+
+      if (newMessage.self) {
+        if (isCurrentChat) {
+          setMessages([...messages, newMessage]);
+        }
+        return;
+      }
 
       // Only add message if it belongs to the currently open conversation
       if (isCurrentChat) {
@@ -87,7 +100,7 @@ function UseGetSocketMessage() {
     socket.on("new-message", handleNewMessage);
 
     return () => socket.off("new-message", handleNewMessage);
-  }, [socket, selectedConversation, messages, setMessages]);
+  }, [socket, selectedConversation, messages, setMessages, sortedUsersData]);
 
   return null;
 }
